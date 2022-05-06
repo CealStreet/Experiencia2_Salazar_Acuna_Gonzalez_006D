@@ -6,6 +6,7 @@
 
 body {
     background-image: url(/img/fondo.jpg);
+    background-size: 100%;
 }
 
 .form-register {
@@ -61,4 +62,11 @@ body {
     color: white;
     margin: 16px 0;
     font-size: 16px;
+}
+
+.form-register label {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
 }
