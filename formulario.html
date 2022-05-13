@@ -15,29 +15,33 @@
 <body>
 
 
+
+
     <section class="container">
         <div class="col-sm-12 col-md-12 col-lg-12">    
         <form method="post" action="#" class="formucolor">
             <h3 class="display-5 text-primary text-center">Contactanos</h3>
 
-        <div>    
+
+        <div> 
             <label for="">Nombre:</label>
-            <input type="text" placeholder="Introduzca su Nombre" maxlength="20" id="nombre" name="nombre" class="form-control">
+            <input type="text" name="nombre" placeholder="Escriba su Nombre" pattern="[a-zA-Z]+" minlength="5" maxlength="40" required class="form-control" />
         </div>
 
         <div>
-            <label for="">Correo:</label>
-            <input type="text" placeholder="correo@ejemplo.com" maxlength="20" id="correo" name="correo" class="form-control">
+            <label for="email">Correo:</label>
+            <input type="email" name="email" placeholder="correo@ejemplo.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required class="form-control">
+            
         </div>
 
         <div>
             <label for="">Numero:</label>
-            <input type="text" placeholder="993939964" maxlength="9" id="numero" name="numero" class="form-control">
+            <input type="text" name="numero" placeholder="993939964" pattern="[0-9]+" minlength="9" maxlength="9" required class="form-control">
         </div>
 
         <div>
             <label for="">Comentario:</label>
-            <textarea name="textarea" placeholder="Escriba un comentario"  id="comentario"></textarea>
+            <textarea name="textarea" placeholder="Escriba un comentario" required id="comentario"></textarea>
         </div>
         
 
@@ -62,7 +66,6 @@
             <a href="index.html" >Volver</a>
 
             
-
         </form>
         
     </form>
