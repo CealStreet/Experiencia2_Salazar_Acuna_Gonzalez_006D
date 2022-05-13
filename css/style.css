@@ -1,6 +1,7 @@
 body {
   background-image: url("/img/fondo.jpg");
   background-size: 100%;
+  background: url("/img/fondo.jpg") fixed center center / cover;
 }
 
 .clase {
