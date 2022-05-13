@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pagina inicio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script>
+
+        $(function() 
+        {
+          $("#valida").validate({
+               rules: {
+                      nombre: "required",
+                      email:{
+                            required:true,
+                            email:true
+                        },
+                      direccion: "required",
+                      fecha: "required",
+                      fono: "required",
+                      password: "required",
+                      password_confirm:{
+                            required: true,
+                            equalTo: "#password"
+                        }
+                  }, //rules
+              messages: {
+                  nombre: {
+                      required: 'Ingresa un nombre válido.',
+                      minlength: 'Nombre ingresado no cumple la cantidad minima de caracteres.'
+                  },
+                  email:{
+                      required:'Ingresa una E-mail válida.',
+                      email:'E-Mail ingresado no valido.'
+                  },
+                  direccion: {
+                      required: 'Ingresa una direccion válida.',
+                      minlength:'Dirección ingresada no cumple la cantidad minima de caracteres.'
+                  },
+                  fecha:{
+                      required: 'Ingrese una fecha válida.'
+                  },
+                  fono:{
+                      required: 'Ingrese un teléfono válida.',
+                      minlength: 'Telefono ingresado no cumple la cantidad minima de caracteres.'
+                  },
+                  password:{
+                      required:'Ingrese una contraseña válida.',
+                      minlength:'Contraseña ingresada no cumple con los caracteres minimos.'
+                  },
+                  password_confirm:{
+                    required:'Ingrese una contraseña válida.',
+                    equalTo:'Las contraseñas no son iguales.'
+                  }
+              }
+          });
+      }); 
+  
+      </script>
+     
+     <style>
+        .error-control {
+            border: 1px solid rgb(52, 38, 255);
+        }
+
+        label.error {
+            color: rgb(52, 38, 255);
+            font-size: 0.8em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- esto es la barra de tareas -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">
+            <img src="img/Logo.jpg" width="100" height="50" alt="" />
+        </a>
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+               
+                <li class="nav-item">
+                    <a class="nav-link " href="quienessomos.html">quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galeria</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="home.html" id="valida" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" class="form-control" minlength="3" required>
+            </div><hr>
+            <div class="form-group">
+                <label for="email">Correo electronico:</label><br>
+                <input type="email" id="email" name="email" class="form-control" placeholder="ejemplo@Gmail.com" required>
+            </div><hr>
+            <div class="form-group">
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" name="fecha" class="form-control" required>
+            </div><hr>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion" class="form-control" minlength="3" required>
+            </div><hr>
+            <div class="form-group">
+                <label for="fono">Fono:</label><br>
+                <input type="number" name="fono" class="form-control" minlength="9" required>
+            </div><hr>
+            <div class="form-group">
+                <label >Contraseña:</label><br>
+                <input class="form-control" type="password" id="password" name="password" minlength="8" pattern="(?=.\d)(?=.[a-z])(?=.[A-Z]).{8,}"
+                title="Debe contener al menos un número, una letra mayúscula, una letra minúscula y al menos 8 o más caracteres" required>
+            </div><hr>
+            <div class="form-group">
+                <label for="password_confirm">Repita contraseña:</label><br>
+                <input class="form-control" type="password" name="password_confirm" pattern="(?=.\d)(?=.[a-z])(?=.[A-Z]).{8,}" title="Debe contener al menos un número, una letra mayúscula, una letra minúscula y al menos 8 o más caracteres" required>
+            </div>
+            <br>
+            <button  class="btn btn-primary">Registrarme</button>
+        </form>
+    </div>
+  
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
